@@ -161,7 +161,7 @@ a {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--dark-gray);
-  transition: var(--transition);
+  transition: color var(--transition);
 }
 
 /* -------------SECTION DARK------------- */
@@ -194,7 +194,7 @@ a {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.18;
-  display: block;
+  /* display: block; */
   align-items: center;
   justify-content: center;
   letter-spacing: 0.04em;
@@ -451,7 +451,8 @@ a {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
-.filter-item-img:hover {
+.filter-link-img:hover,
+.filter-link-img:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
@@ -618,14 +619,15 @@ a {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 408px;
-  min-height: 576px;
+  width: 360px;
+  min-height: 536px;
   background-color: #fcfcfc;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   transform: translate(-50%, -50%) scaleY(1);
   transition: transform 250ms linear;
+  padding: 24px;
 }
 
 .backdrop.is-hidden .modal {
@@ -633,18 +635,18 @@ a {
 }
 
 .modal-close {
-  position: absolute;
+  /* position: absolute;
   top: 24px;
-  right: 24px;
+  right: 24px; */
   width: 24px;
   height: 24px;
-  background-color: #e7e9fc;
+  background-color: var(--light-gray);
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-bottom: 24px;
 }
 
 .close-icon {
@@ -657,4 +659,42 @@ a {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+}
+
+.modal-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: var(--dark-blue);
+  margin-bottom: 14px;
+}
+
+.input-text {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+}
+
+.input-text2 {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: #8e8f99;
+}
+
+.modal-input {
+  width: 337px;
+  height: 40px;
+  margin-bottom: 8px;
+  background-color: transparent;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding-left: 19px;
 }
