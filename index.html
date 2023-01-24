@@ -429,6 +429,23 @@
             </li>
           </ul>
         </div>
+        <div class="footer-media">
+          <p class="footer-title title">Subscribe</p>
+          <div class="footer-post">
+            <input
+              name="user-email"
+              type="text"
+              class="footer-input"
+              placeholder="Email"
+            />
+            <div class="footer-post-icon">
+              <button type="submit" class="footer-btn">Subscribe</button>
+              <svg class="footer-icon-btn">
+                <use href="./images/icons.svg#icon-Frame"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
     <div class="backdrop is-hidden" data-modal>
@@ -444,16 +461,52 @@
         <form class="modal-form">
           <label>
             <span class="input-text">Name</span>
-            <input name="user-name" type="text" class="modal-input"/>
+            <span class="input-wrap">
+              <input name="user-name" type="text" class="modal-input" />
+              <svg class="person-icon">
+                <use href="./images/icons.svg#icon-person"></use>
+              </svg>
+            </span>
           </label>
           <label>
             <span class="input-text2">Phone</span>
-            <input name="user-phone" type="text" class="modal-input" />
+            <span class="input-wrap">
+              <input name="user-phone" type="text" class="modal-input" />
+              <svg class="contact-icon">
+                <use href="./images/icons.svg#icon-phone"></use>
+              </svg>
+            </span>
           </label>
           <label>
             <span class="input-text2">Email</span>
-            <input name="user-email" type="text" class="modal-input" />
+            <span class="input-wrap">
+              <input name="user-email" type="text" class="modal-input" />
+              <svg class="contact-icon">
+                <use href="./images/icons.svg#icon-email"></use>
+              </svg>
+            </span>
           </label>
+          <label for="user-text" class="input-text2">Comment </label>
+          <textarea
+            name="user-text"
+            id="user-text"
+            class="modal-comment"
+            placeholder="Text input"
+          ></textarea>
+          <span class="modal-checkbox">
+            <input
+              type="checkbox"
+              name="privacy"
+              id="privacy"
+              value="true"
+              class="input-check"
+            />
+            <label for="privacy" class="check-text"
+              >I accept the terms and conditions of the
+              <a class="modal-ref">Privacy Policy</a></label
+            >
+          </span>
+          <button type="submit" class="modal-btn">Send</button>
         </form>
       </div>
     </div>
