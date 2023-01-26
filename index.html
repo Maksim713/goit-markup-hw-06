@@ -429,7 +429,7 @@
             </li>
           </ul>
         </div>
-        <div class="footer-media">
+        <div class="footer-media-post">
           <p class="footer-title title">Subscribe</p>
           <div class="footer-post">
             <input
@@ -439,10 +439,11 @@
               placeholder="Email"
             />
             <div class="footer-post-icon">
-              <button type="submit" class="footer-btn">Subscribe</button>
-              <svg class="footer-icon-btn">
+              <button type="submit" class="footer-btn">Subscribe
+                <svg class="footer-icon-btn">
                 <use href="./images/icons.svg#icon-Frame"></use>
-              </svg>
+                </svg>
+              </button>
             </div>
           </div>
         </div>
@@ -455,11 +456,9 @@
             <use href="./images/icons.svg#icon-close"></use>
           </svg>
         </button>
-        <h3 class="modal-title">
-          Leave your contacts and we will call you back
-        </h3>
+        <p class="modal-title">Leave your contacts and we will call you back</p>
         <form class="modal-form">
-          <label>
+          <label class="modal-label">
             <span class="input-text">Name</span>
             <span class="input-wrap">
               <input name="user-name" type="text" class="modal-input" />
@@ -467,7 +466,7 @@
                 <use href="./images/icons.svg#icon-person"></use>
               </svg>
             </span>
-          </label>
+          </label class="modal-label">
           <label>
             <span class="input-text2">Phone</span>
             <span class="input-wrap">
@@ -477,7 +476,7 @@
               </svg>
             </span>
           </label>
-          <label>
+          <label class="modal-label">
             <span class="input-text2">Email</span>
             <span class="input-wrap">
               <input name="user-email" type="text" class="modal-input" />
@@ -499,11 +498,17 @@
               name="privacy"
               id="privacy"
               value="true"
-              class="input-check"
+              class="input-check visually-hidden"
             />
             <label for="privacy" class="check-text"
-              >I accept the terms and conditions of the
-              <a class="modal-ref">Privacy Policy</a></label
+              >
+              <span>
+              <svg class="vector-icon">
+                  <use href="./images/icons.svg#icon-Vector"></use>
+                </svg>
+              </span>
+              I accept the terms and conditions of the
+              <a href="#" class="modal-ref">Privacy Policy</a></label
             >
           </span>
           <button type="submit" class="modal-btn">Send</button>

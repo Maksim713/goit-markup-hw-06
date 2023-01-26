@@ -1,11 +1,12 @@
 :root {
   --dark-blue: #2e2f42;
   --dark-gray: #434455;
+  --pale-gray: #fcfcfc;
+  --light-gray: #e7e9fc;
   --primary: #4d5ae5;
   --primary-dark: #404bbf;
   --white: #ffffff;
   --light: #f4f4fd;
-  --light-gray: #e7e9fc;
   --green: #31d0aa;
   --steel: #8e8f99;
   --bg-gradient: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7));
@@ -595,11 +596,11 @@ a {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
   padding-left: 16px;
+  color: var(--white);
 }
 
 .footer-btn {
-  width: 165px;
-  height: 40px;
+  min-width: 165px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -681,13 +682,13 @@ a {
   left: 50%;
   width: 360px;
   min-height: 536px;
-  background-color: #fcfcfc;
+  background-color: var(--pale-gray);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   transform: translate(-50%, -50%) scaleY(1);
-  transition: transform 250ms linear;
-  padding: 24px;
+  transition: var(--transition);
+  padding: 72px 24px 24px;
 }
 
 .backdrop.is-hidden .modal {
@@ -695,9 +696,9 @@ a {
 }
 
 .modal-close {
-  /* position: absolute;
+  position: absolute;
   top: 24px;
-  right: 24px; */
+  right: 24px;
   width: 24px;
   height: 24px;
   background-color: var(--light-gray);
@@ -705,14 +706,22 @@ a {
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
   display: block;
-  margin-left: auto;
-  margin-bottom: 24px;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  background-color: var(--primary-dark);
 }
 
 .close-icon {
   width: 8px;
   height: 8px;
   fill: #000000;
+}
+
+.modal-close:hover > .close-icon,
+.modal-close:focus > .close-icon {
+  fill: var(--white);
 }
 
 .is-hidden {
@@ -731,13 +740,18 @@ a {
   margin-bottom: 14px;
 }
 
+.modal-label {
+  margin-bottom: 8px;
+  display: block;
+}
+
 .input-text {
   display: block;
   margin-bottom: 4px;
   font-size: 12px;
   line-height: 1.33;
   letter-spacing: 0.04em;
-  color: #8e8f99;
+  color: var(--steel);
 }
 
 .input-text2 {
@@ -746,35 +760,70 @@ a {
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.01em;
-  color: #8e8f99;
+  color: var(--steel);
 }
 
 .input-wrap {
   position: relative;
+  display: block;
+}
+
+.check-text {
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  align-items: center;
+  display: flex;
+  color: #757575;
+}
+
+.check-text span {
+  width: 16px;
+  height: 16px;
+  border: 1.25px solid var(--dark-blue);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  fill: transparent;
+}
+
+.input-check:checked + .check-text span {
+  background-color: var(--primary-dark);
+  fill: var(--light);
+  border: 1.25px solid var(--primary-dark);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+.vector-icon {
+  width: 10px;
+  height: 8px;
 }
 
 .modal-input {
-  width: 318px;
+  width: 100%;
   height: 40px;
-  margin-bottom: 8px;
   background-color: transparent;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   outline: none;
-  padding-left: 38px;
+  padding: 0 -38px 0 38px;
+  transition: border var(--transition);
 }
 
 .modal-input:focus,
 .modal-comment:focus {
   border-color: var(--primary);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border var(--transition);
 }
 
 .modal-input:focus + .person-icon,
 .modal-input:focus + .contact-icon {
   fill: var(--primary);
-  transition: var(--transition);
-  transition-property: fill;
+  /* transition: var(--transition);
+  transition-property: fill; */
 }
 
 .person-icon {
@@ -784,6 +833,8 @@ a {
   transform: translateY(-50%);
   width: 18px;
   height: 18px;
+  transition: var(--transition);
+  transition-property: fill;
 }
 
 .contact-icon {
@@ -793,6 +844,8 @@ a {
   transform: translateY(-50%);
   width: 18px;
   height: 24px;
+  transition: var(--transition);
+  transition-property: fill;
 }
 
 .modal-comment {
@@ -806,6 +859,7 @@ a {
   padding-left: 16px;
   margin-bottom: 16px;
   resize: none;
+  transition: border var(--transition);
 }
 
 .modal-comment::placeholder {
@@ -813,13 +867,6 @@ a {
   line-height: 1.33;
   letter-spacing: 0.04em;
   color: rgba(117, 117, 117, 0.5);
-}
-
-.check-text {
-  font-size: 12px;
-  line-height: 1.33;
-  letter-spacing: 0.04em;
-  color: #757575;
 }
 
 .modal-ref {
